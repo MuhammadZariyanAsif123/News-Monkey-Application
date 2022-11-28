@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import NewsItem from './NewsItem'
+import NewsItem from './NewsItem';
 
 export default class News extends Component 
 {
-  render()
+  render() 
   {
-     return(
-        <div>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
-        </div>
-     )
-     
+    return (
+      <div>
+         <NewsItem/>
+      </div>
+    );
   }
 }
