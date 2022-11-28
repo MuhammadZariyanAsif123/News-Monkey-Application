@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewsItem from './components/NewsItem';
+import NewsItem from './NewsItem'
 
 export default class News extends Component 
 {
@@ -7,7 +7,9 @@ export default class News extends Component
   {
      return(
         <div>
-          <NewsItem/>
+        <NewsItem/>
+        <NewsItem/>
+        <NewsItem/>
         </div>
      )
      
