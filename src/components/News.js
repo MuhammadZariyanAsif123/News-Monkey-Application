@@ -335,30 +335,32 @@ export default class News extends Component {
   constructor() {
     super();
     this.state = {
-     articles: this.articles,
-     loading: false
-    }
+      articles: this.articles,
+      loading: false,
+    };
   }
+
+  componentDidMount() {}
 
   render() {
     return (
       <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <NewsItem
-              title="Card No 1"
-              description="This is card no 1"
-              imageURL="https://image.cnbcfm.com/api/v1/image/107149860-1668099830811-nyse1.jpg?v=1669646050&w=1920&h=1080"
-            />
-          </div>
-
-          <div class="col-md-4">
-            <NewsItem title="myTitle" description="myDesc" />
-          </div>
-
-          <div class="col-md-4">
-            <NewsItem title="myTitle" description="myDesc" />
-          </div>
+        <div className="row">
+          {this.state.articles.map((element) => {
+            return (
+              <div className="col-md-4" key={element.url}>
+                <NewsItem
+                  title={element.title}
+                  description={element.description}
+                  imageUrl={element.urlToImage}
+                  newsUrl={element.url}
+                  author={element.author}
+                  date={element.publishedAt}
+                  source={element.source.name}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     );
